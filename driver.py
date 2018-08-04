@@ -18,6 +18,7 @@ def finding_aspects(input_review, name_of_file):
     # Your code that finds out the list of aspects present in the review and saves those aspects in a decreasing order of importance.
     # The output has to be saved in the data/output folder with the same name as data/input file
     # Note the writing to file has to be handled by you.
+    logging.debug("{} {} \n".format(input_review, name_of_file))
 
     pass
 
@@ -27,8 +28,9 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format='%(asctime)s:%(levelname)s:%(message)s')
 
     #Folder where the input files are present
-    mypath = "input"
+    mypath = "data//input"
     list_of_input_files = read_directory(mypath)
+    logging.debug(list_of_input_files)
     for each_file in list_of_input_files:
         with open(os.path.join(mypath,each_file), "r") as f:
             file_contents = f.read()
